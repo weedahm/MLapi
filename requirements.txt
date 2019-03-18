@@ -1,0 +1,10 @@
+numpy
+scipy
+matplotlib
+scikit-learn
+tensorflow
+pandas
+
+django
+djangorestframework
+django-cors-headers
