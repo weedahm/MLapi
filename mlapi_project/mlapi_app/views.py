@@ -14,13 +14,13 @@ class HexaPoint(APIView):
         bodychart = self.request.data
 
         # set 수
-        predict_data_set = learningFunction.supervised_learning_inference(bodychart, isSet=True)
+        predict_n_set = learningFunction.supervised_learning_inference(bodychart, isSet=True)
 
         # 약재 중량(LIST)
-        predict_data = learningFunction.supervised_learning_inference(bodychart, isSet=False, n_set=predict_data_set)
+        predict_data = learningFunction.supervised_learning_inference(bodychart, isSet=False, infer_n_set=predict_n_set)
 
         # 약재 중량(DIC)
-        predict_data_dic = learningFunction.dataToDic(predict_data, n_set=predict_data_set)
+        predict_data_dic = learningFunction.dataToDic(predict_data, n_set=predict_n_set)
 
         # 그룹 점수(DIC)
         score = learningFunction.groupScore(predict_data_dic)
